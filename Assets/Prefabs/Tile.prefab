@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 5496159918566352268}
   - component: {fileID: 7235612423575592396}
   - component: {fileID: 3592342789347216457}
+  - component: {fileID: 9121352175843088439}
   m_Layer: 0
-  m_Name: Plot
+  m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.925, y: 0.925, z: 0.925}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -130,3 +131,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &9121352175843088439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900817314662553543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9542c995e84da4ba0e73c46d43a4fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
