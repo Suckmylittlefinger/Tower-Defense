@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.ComponentModel.Design;
 
 public class BasicTurret : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform turretRotationPoint;
     [SerializeField] private LayerMask enemyMask;
+    [SerializeField] private GameObject bulletPreFab;
+    [SerializeField] private Transform firePoint;
 
     [Header("Attributes")]
     [SerializeField] private float targetingRange = 3f;
     [SerializeField] private float rotationSpeed = 200f;
+    [SerializeField] float fireRate = 1f;
+    float fireCountdown = 0f;
 
     private Transform target;
 
@@ -32,6 +37,15 @@ public class BasicTurret : MonoBehaviour
         {
             target = null;
         }
+
+        //if ready to fire will call Shoot method and shoot at enemies 
+        if (fireCountdown<= 0f) 
+        {
+            Shoot();
+            fireCountdown = 1f / fireRate;
+        }
+        //slowly decreases the fireCountdown each frame to get ready to fire again
+        fireCountdown -= Time.deltaTime;
         
     }
 
@@ -73,6 +87,15 @@ public class BasicTurret : MonoBehaviour
         //Draw a wireframe disc around the turret to represent its range
         Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
     }
+    //shoots bullets at the targetted enemy 
+    private void Shoot()
+    {// to get reference to bullet object and access script
+        GameObject bulletGO = (GameObject)Instantiate(bulletPreFab, firePoint.position, firePoint.rotation);
+        Bullet bullet = bulletGO.GetComponent<Bullet>();
 
-    
+        if (bullet != null)
+        {
+            bullet.Seek(target); //sends target the turret is aiming at to the bullet script 
+        }
+    }
 }
