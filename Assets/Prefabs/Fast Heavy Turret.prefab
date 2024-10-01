@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 1043770389252030181}
   - component: {fileID: 8509204761954098169}
   m_Layer: 0
-  m_Name: Turret
+  m_Name: Fast Heavy Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,7 +165,7 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 128
-  bulletPreFab: {fileID: 51566404831684924, guid: 82e08d6d8d03731498762b38ae8699cc, type: 3}
+  bulletPreFab: {fileID: 51566404831684924, guid: 3f98fbc6920db39418659e75e9200fa9, type: 3}
   firePoint: {fileID: 1203309505831366349}
   targetingRange: 2
   rotationSpeed: 200
