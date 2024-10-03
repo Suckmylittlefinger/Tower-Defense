@@ -2623,7 +2623,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towers:
-  - {fileID: 7543380751879557947, guid: 6bc3d97a5afe04546b4ba415cec2c62c, type: 3}
+  - {fileID: 5869647699041657436, guid: f7e3cd97d9da8af44b1509bb4b6b92ec, type: 3}
+  - {fileID: 5869647699041657436, guid: eea4caa7f41ef13478918e137e2c964b, type: 3}
+  - {fileID: 5869647699041657436, guid: 68e1c18b5173d76429e93b2b51669e3a, type: 3}
+  - {fileID: 5869647699041657436, guid: 45d256874ba39e7429cbef543165b019, type: 3}
 --- !u!1001 &392551421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5492,6 +5495,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5496159918566352268, guid: 9092bf37a01f2214e9f7924d9af9fe34, type: 3}
   m_PrefabInstance: {fileID: 996224199}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &997846489
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1043770389252030181, guid: eea4caa7f41ef13478918e137e2c964b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.021099
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043770389252030181, guid: eea4caa7f41ef13478918e137e2c964b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.9053563
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043770389252030181, guid: eea4caa7f41ef13478918e137e2c964b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043770389252030181, guid: eea4caa7f41ef13478918e137e2c964b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043770389252030181, guid: eea4caa7f41ef13478918e137e2c964b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043770389252030181, guid: eea4caa7f41ef13478918e137e2c964b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043770389252030181, guid: eea4caa7f41ef13478918e137e2c964b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043770389252030181, guid: eea4caa7f41ef13478918e137e2c964b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043770389252030181, guid: eea4caa7f41ef13478918e137e2c964b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043770389252030181, guid: eea4caa7f41ef13478918e137e2c964b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869647699041657436, guid: eea4caa7f41ef13478918e137e2c964b, type: 3}
+      propertyPath: m_Name
+      value: Machine Gun Turret
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eea4caa7f41ef13478918e137e2c964b, type: 3}
 --- !u!1 &1003082604
 GameObject:
   m_ObjectHideFlags: 0
@@ -8065,6 +8125,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5496159918566352268, guid: 9092bf37a01f2214e9f7924d9af9fe34, type: 3}
   m_PrefabInstance: {fileID: 1584907631}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1600076833
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1043770389252030181, guid: 68e1c18b5173d76429e93b2b51669e3a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.023404
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043770389252030181, guid: 68e1c18b5173d76429e93b2b51669e3a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.0752425
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043770389252030181, guid: 68e1c18b5173d76429e93b2b51669e3a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043770389252030181, guid: 68e1c18b5173d76429e93b2b51669e3a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043770389252030181, guid: 68e1c18b5173d76429e93b2b51669e3a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043770389252030181, guid: 68e1c18b5173d76429e93b2b51669e3a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043770389252030181, guid: 68e1c18b5173d76429e93b2b51669e3a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043770389252030181, guid: 68e1c18b5173d76429e93b2b51669e3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043770389252030181, guid: 68e1c18b5173d76429e93b2b51669e3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043770389252030181, guid: 68e1c18b5173d76429e93b2b51669e3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869647699041657436, guid: 68e1c18b5173d76429e93b2b51669e3a, type: 3}
+      propertyPath: m_Name
+      value: Heavy Turret
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 68e1c18b5173d76429e93b2b51669e3a, type: 3}
 --- !u!1 &1602168270
 GameObject:
   m_ObjectHideFlags: 0
@@ -10539,3 +10656,5 @@ SceneRoots:
   - {fileID: 280018688}
   - {fileID: 1602168271}
   - {fileID: 439632157}
+  - {fileID: 1600076833}
+  - {fileID: 997846489}
