@@ -7,19 +7,25 @@ public class BuildManager : MonoBehaviour
     public static BuildManager main;
 
     [Header("References")]
-    [SerializeField] private GameObject[] towers; //Array of towers that can be built
+    [SerializeField] private TurretBuilder[] turrets; //Array of turrets that can be built from TurretBuilder class
 
-    private int towerSelected = 0; //Index to keep track of the currently selected tower
+    private int turretSelected = 0; //Index to keep track of the currently selected turret
 
     private void Awake()
     {
         main = this;
     }
 
-    //Returns the currently selected tower prefab to be built
-    public GameObject GetTowerSelected()
+    //Returns the currently selected turret prefab to be built
+    public TurretBuilder GetTurretSelected()
     {
-        return towers[towerSelected]; //Select the tower based on the selected index
+        return turrets[turretSelected]; //Select the turret based on the selected index
+    }
+
+    // For changing tower selected using UI
+    public void SetTurretSelected(int _turretSelected)
+    {
+        turretSelected = _turretSelected;
     }
 
 }

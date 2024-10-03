@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    private GameObject tower; //Reference to the tower currently placed on this tile (null if no tower is placed)
+    private GameObject turret; //Reference to the turret currently placed on this tile (null if no turret is placed)
 
     private void OnMouseDown()
     {
-        if (tower != null) //Prevents placing a tower on another tower
+        if (turret != null) //Prevents placing a turret on another turret
         {
             return;
         }
 
-        GameObject towerToBuild = BuildManager.main.GetTowerSelected(); //Gets the currently selected tower from the BuildManager
-        tower = Instantiate(towerToBuild, transform.position, Quaternion.identity); //Instantiates the tower on this tile at the tile's position
+        TurretBuilder turretToBuild = BuildManager.main.GetTurretSelected(); //Gets the currently selected turret from the BuildManager
+        turret = Instantiate(turretToBuild.prefab, transform.position, Quaternion.identity); //Instantiates the turret on this tile at the tile's position
 
         Debug.Log("Tile clicked" + name);
     }
