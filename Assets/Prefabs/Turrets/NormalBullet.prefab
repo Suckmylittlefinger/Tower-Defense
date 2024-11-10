@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   bulletDamage: 1
+  impactEffect: {fileID: 204507756971919796, guid: 10ae2159a9adb3840b32c09150e58ee7, type: 3}
 --- !u!58 &-2526772126429003716
 CircleCollider2D:
   m_ObjectHideFlags: 0
