@@ -13,9 +13,22 @@ public class Tile : MonoBehaviour
             return;
         }
 
-        TurretBuilder turretToBuild = BuildManager.main.GetTurretSelected(); //Gets the currently selected turret from the BuildManager
-        turret = Instantiate(turretToBuild.prefab, transform.position, Quaternion.identity); //Instantiates the turret on this tile at the tile's position
+        // Get the selected turret from the BuildManager
+        TurretBuilder turretToBuild = BuildManager.main.GetTurretSelected();
 
+        // Check if there is enough money to buy the turret
+        if (LevelManager.main.SpendMoney(turretToBuild.cost))
+        {
+            // Instantiate the turret if purchase was successful
+            turret = Instantiate(turretToBuild.prefab, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Debug.Log("Not enough money to build turret.");
+        }
+
+        
+        //For testing
         Debug.Log("Tile clicked" + name);
     }
 }
