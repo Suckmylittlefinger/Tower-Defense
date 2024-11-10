@@ -13,7 +13,7 @@ public class BuildManager : MonoBehaviour
 
     private void Awake()
     {
-        main = this;
+        main = this; //Makes sure there is only one instance of BuildManager and makes it more easily accessible in other scripts
     }
 
     //Returns the currently selected turret prefab to be built

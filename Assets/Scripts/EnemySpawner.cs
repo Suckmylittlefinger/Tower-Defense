@@ -81,7 +81,8 @@ public class EnemySpawner : MonoBehaviour
     //Spawns an enemy at the start position
     private void SpawnEnemy()
     {
-        GameObject prefabToSpawn = enemyPrefabs[0]; //Selects the first enemy prefab
+        int enemyIndex = Random.Range(0, enemyPrefabs.Length); //Random Enemy selection from array
+        GameObject prefabToSpawn = enemyPrefabs[enemyIndex]; //Selects the enemy prefab
         //Spawns enemy at starting point created in LevelManager and keeps its rotation
         Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
     }

@@ -2674,6 +2674,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 4784017263872342555, guid: e0805879d9d4dab4f9c8a9c68dd96c7e, type: 3}
+  - {fileID: 4784017263872342555, guid: e0805879d9d4dab4f9c8a9c68dd96c7e, type: 3}
+  - {fileID: 4784017263872342555, guid: e0805879d9d4dab4f9c8a9c68dd96c7e, type: 3}
+  - {fileID: 4784017263872342555, guid: b56f8abe0adeedc4f96db87e8724f6ff, type: 3}
   baseEnemies: 8
   enemiesPerSecond: 1
   timeBetweenWaves: 1
@@ -3130,7 +3133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &439632154
 MonoBehaviour:
   m_ObjectHideFlags: 0
