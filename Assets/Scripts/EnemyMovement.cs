@@ -28,6 +28,7 @@ public class EnemyMovement : MonoBehaviour
             if (pathIndex == LevelManager.main.path.Length) //Check if the enemy has reached the end of the path
             {
                 EnemySpawner.onEnemyDestroy.Invoke();
+                LevelManager.main.LoseLives(1); //Takes away a life if enemy reaches the end
                 Destroy(gameObject); //Destroy enemy when it reaches end of path
                 return;
             }

@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     public Transform[] path;
 
     public int money;
+    public int totalLives;
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         money = 100; //Starting money
+        totalLives = 10; //Starting lives
     }
 
     //Add to total money
@@ -41,6 +43,10 @@ public class LevelManager : MonoBehaviour
             Debug.Log("Not enough money");
             return false;
         }
+    }
 
+    public void LoseLives(int lifeLost)
+    {
+        totalLives -= lifeLost;
     }
 }

@@ -7,9 +7,11 @@ public class UI : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] TextMeshProUGUI moneyUI;
+    [SerializeField] TextMeshProUGUI livesUI;
 
     private void Update()
     {
-        moneyUI.text = LevelManager.main.money.ToString();
+        moneyUI.text = "Money: " + LevelManager.main.money.ToString();
+        livesUI.text = "Lives: " + LevelManager.main.totalLives.ToString();
     }
 }
