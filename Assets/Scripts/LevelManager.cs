@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager main;
+    [SerializeField] GameObject gameOverScreen;
 
     public Transform startPoint;
     public Transform[] path;
@@ -20,7 +21,15 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         money = 100; //Starting money
-        totalLives = 10; //Starting lives
+        totalLives = 3; //Starting lives
+    }
+
+    private void Update()
+    {
+        if (totalLives == 0)
+        {
+            GameOver();
+        }
     }
 
     //Add to total money
@@ -48,5 +57,11 @@ public class LevelManager : MonoBehaviour
     public void LoseLives(int lifeLost)
     {
         totalLives -= lifeLost;
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        gameOverScreen.SetActive(true);
     }
 }

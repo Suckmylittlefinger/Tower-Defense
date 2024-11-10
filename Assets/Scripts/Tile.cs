@@ -12,6 +12,10 @@ public class Tile : MonoBehaviour
         {
             return;
         }
+        else if (LevelManager.main.totalLives == 0)
+        {
+            return;
+        }
 
         // Get the selected turret from the BuildManager
         TurretBuilder turretToBuild = BuildManager.main.GetTurretSelected();
@@ -29,6 +33,6 @@ public class Tile : MonoBehaviour
 
         
         //For testing
-        Debug.Log("Tile clicked" + name);
+        //Debug.Log("Tile clicked" + name);
     }
 }
