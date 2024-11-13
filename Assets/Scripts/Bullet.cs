@@ -7,11 +7,17 @@ public class Bullet : MonoBehaviour
     private Transform target;
     [SerializeField] float speed = 10f;
     [SerializeField] int bulletDamage = 1;
+    [SerializeField] bool isBigBullet;
     [SerializeField] GameObject impactEffect;
 
     public void Seek (Transform _target)
     {
         target = _target;
+    }
+
+     public bool IsBigBullet()
+    {
+        return isBigBullet;
     }
 
     // Update is called once per frame
@@ -43,8 +49,11 @@ public class Bullet : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other)
+{
+    var health = other.gameObject.GetComponent<Health>();
+    if (health != null)
     {
-        //Take health from enemy from Health script
-        other.gameObject.GetComponent<Health>().TakeDamage(bulletDamage);
+        health.TakeDamage(bulletDamage, isBigBullet);
     }
+}
 }

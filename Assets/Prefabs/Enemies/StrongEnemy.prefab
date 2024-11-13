@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7727780959453793574}
-  moveSpeed: 1
+  moveSpeed: 1.5
 --- !u!114 &7048318396537875939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,3 +178,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoints: 50
   moneyDropped: 100
+  isTankEnemy: 0
