@@ -5,14 +5,18 @@ using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private GameObject[] enemyPrefabs; //Array for different enemy types
+    [Header("Waves")]
+    //[SerializeField] private GameObject[] enemyPrefabs; //Array for different enemy types
+    [SerializeField] private GameObject[] wave1;
+    [SerializeField] private GameObject[] wave2;
+    [SerializeField] private GameObject[] wave3;
 
-    [Header("Attributes")]
-    [SerializeField] private int baseEnemies = 8; //Base number of enemies in the first wave
+    [Header("Attributes")]    
     [SerializeField] private float enemiesPerSecond = 0.5f; //Rate that enemies spawn (enemies per second)
     [SerializeField] private float timeBetweenWaves = 5f; //Time delay between waves
-    [SerializeField] private float difficultyScale = 0.75f; //Scaling factor for increasing wave difficulty
+
+    //[SerializeField] private int baseEnemies = 8; //Base number of enemies in the first wave
+    //[SerializeField] private float difficultyScale = 0.75f; //Scaling factor for increasing wave difficulty
 
     [Header("Events")]
     public static UnityEvent onEnemyDestroy = new UnityEvent(); //Event triggered when an enemy is destroyed
@@ -78,20 +82,58 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(StartWave()); //Start the next wave
     }
 
-    //Spawns an enemy at the start position
     private void SpawnEnemy()
     {
-        int enemyIndex = Random.Range(0, enemyPrefabs.Length); //Random Enemy selection from array
-        GameObject prefabToSpawn = enemyPrefabs[enemyIndex]; //Selects the enemy prefab
-        //Spawns enemy at starting point created in LevelManager and keeps its rotation
+        // Get the enemy array for the current wave
+        GameObject[] currentWaveArray = GetWaveArray();
+        if (currentWaveArray == null || currentWaveArray.Length == 0) return; // Return if empty
+
+        int enemyIndex = currentWaveArray.Length - enemiesLeftToSpawn; // Array Index
+        GameObject prefabToSpawn = currentWaveArray[enemyIndex]; // Select enemy
+        
+        // Spawn enemy
         Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
     }
 
-    //Calculate the number of enemies for the current wave based on the wave number and difficulty scaling
     private int EnemiesPerWave()
     {
-        // Formula: baseEnemies * currentWave ^(power of) difficultyScale = enemies to spawn
-        // Example: Wave 2 -> 8 * 2 ^ 0.75 = 13 enemies
-        return Mathf.RoundToInt(baseEnemies * Mathf.Pow(currentWave, difficultyScale)); //More enemies per wave
+        GameObject[] currentWaveArray = GetWaveArray();
+        return currentWaveArray != null ? currentWaveArray.Length : 0;
     }
+
+    private GameObject[] GetWaveArray()
+    {
+        // Returns wave array based on current wave number
+        switch (currentWave)
+        {
+            case 1: return wave1;
+            case 2: return wave2;
+            case 3: return wave3;
+            default: return null;
+        }
+    }
+
+
+
+
+
+
+
+
+    //Spawns an enemy at the start position
+    // private void SpawnEnemy()
+    // {
+    //     int enemyIndex = Random.Range(0, enemyPrefabs.Length); //Random Enemy selection from array
+    //     GameObject prefabToSpawn = enemyPrefabs[enemyIndex]; //Selects the enemy prefab
+    //     //Spawns enemy at starting point created in LevelManager and keeps its rotation
+    //     Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+    // }
+
+    // //Calculate the number of enemies for the current wave based on the wave number and difficulty scaling
+    // private int EnemiesPerWave()
+    // {
+    //     // Formula: baseEnemies * currentWave ^(power of) difficultyScale = enemies to spawn
+    //     // Example: Wave 2 -> 8 * 2 ^ 0.75 = 13 enemies
+    //     return Mathf.RoundToInt(baseEnemies * Mathf.Pow(currentWave, difficultyScale)); //More enemies per wave
+    // }
 }
