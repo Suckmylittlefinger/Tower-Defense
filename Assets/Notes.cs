@@ -1,8 +1,6 @@
 
 //THINGS TO ADD / WORK ON
 
-// Need to add losing to game
-// Tank enemies not fully working yet
-// Only basic enemies should spawn in first level
+// Enemies left alive not always accurate. Need to debug
 
 //Maybe add consumable traps

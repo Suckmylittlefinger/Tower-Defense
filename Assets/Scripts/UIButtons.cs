@@ -19,4 +19,9 @@ public class UIButtons : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Loads the next scene in the build index
+    }
 }

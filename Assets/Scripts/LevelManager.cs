@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager main;
     [SerializeField] GameObject gameOverScreen;
+    [SerializeField] GameObject nextLevelScreen;
 
     public Transform startPoint;
     public Transform[] path;
@@ -62,5 +63,11 @@ public class LevelManager : MonoBehaviour
     {
         Time.timeScale = 0;
         gameOverScreen.SetActive(true);
+    }
+
+    public void LevelComplete()
+    {
+        Time.timeScale = 0;
+        nextLevelScreen.SetActive(true);
     }
 }

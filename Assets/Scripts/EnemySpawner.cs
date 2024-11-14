@@ -92,6 +92,7 @@ public class EnemySpawner : MonoBehaviour
         {
             Debug.Log("Finished Last Wave");
             lastWaveCompleted = true;
+            LevelManager.main.LevelComplete();
             return;
         }
 
