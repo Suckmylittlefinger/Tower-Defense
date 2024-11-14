@@ -5,8 +5,9 @@ using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public static EnemySpawner main;
+
     [Header("Waves")]
-    //[SerializeField] private GameObject[] enemyPrefabs; //Array for different enemy types
     [SerializeField] private GameObject[] wave1;
     [SerializeField] private GameObject[] wave2;
     [SerializeField] private GameObject[] wave3;
@@ -15,13 +16,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float enemiesPerSecond = 0.5f; //Rate that enemies spawn (enemies per second)
     [SerializeField] private float timeBetweenWaves = 5f; //Time delay between waves
 
-    //[SerializeField] private int baseEnemies = 8; //Base number of enemies in the first wave
-    //[SerializeField] private float difficultyScale = 0.75f; //Scaling factor for increasing wave difficulty
-
     [Header("Events")]
     public static UnityEvent onEnemyDestroy = new UnityEvent(); //Event triggered when an enemy is destroyed
 
-    private int currentWave = 1;
+    public int currentWave = 1;
     private float timeSinceLastSpawn;
     private int enemiesAlive;
     private int enemiesLeftToSpawn;
@@ -29,6 +27,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
+        main = this; //Makes sure there is only one instance of LevelManager and makes it more easily accessible in other scripts
         onEnemyDestroy.AddListener(EnemyDestroyed); //Adds a listener to detect when an enemy is destroyed
     }
 
@@ -53,7 +52,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
         //If no more enemies are alive or left to spawn, end the current wave
-        if (enemiesAlive == 0 && enemiesLeftToSpawn == 0)
+        if (enemiesAlive <= 0 && enemiesLeftToSpawn <= 0)
         {
             EndWave();
         }
@@ -63,6 +62,12 @@ public class EnemySpawner : MonoBehaviour
     private void EnemyDestroyed()
     {
         enemiesAlive--;
+
+        // For testing since enemies are alive when next wave starts
+        if (enemiesAlive <= 0 && enemiesLeftToSpawn <= 0)
+        {
+            EndWave();
+        }
     }
 
     //Coroutine to manage wave timing and start spawning after the time between waves
@@ -116,7 +121,10 @@ public class EnemySpawner : MonoBehaviour
 
 
 
+    //[SerializeField] private GameObject[] enemyPrefabs; //Array for different enemy types
 
+    //[SerializeField] private int baseEnemies = 8; //Base number of enemies in the first wave
+    //[SerializeField] private float difficultyScale = 0.75f; //Scaling factor for increasing wave difficulty
 
 
 
