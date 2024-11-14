@@ -49,7 +49,6 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not enough money");
             return false;
         }
     }

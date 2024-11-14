@@ -24,6 +24,7 @@ public class EnemySpawner : MonoBehaviour
     private int enemiesAlive;
     private int enemiesLeftToSpawn;
     private bool isSpawning = false;
+    public bool lastWaveCompleted = false; // For starting next level
 
     private void Awake()
     {
@@ -38,7 +39,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if (!isSpawning) return;
+        if (!isSpawning || lastWaveCompleted) return;
 
         timeSinceLastSpawn += Time.deltaTime;
 
@@ -46,8 +47,6 @@ public class EnemySpawner : MonoBehaviour
         if (timeSinceLastSpawn >= (1f/ enemiesPerSecond) && enemiesLeftToSpawn > 0) 
         {
             SpawnEnemy();
-            enemiesLeftToSpawn--;
-            enemiesAlive++;
             timeSinceLastSpawn = 0f; //Resets spawn time so enemies don't spawn every frame
         }
 
@@ -61,7 +60,10 @@ public class EnemySpawner : MonoBehaviour
     //Decrease the enemiesAlive count when an enemy is destroyed
     private void EnemyDestroyed()
     {
-        enemiesAlive--;
+        if (enemiesAlive > 0)
+        {
+            enemiesAlive--;
+        }
 
         // For testing since enemies are alive when next wave starts
         if (enemiesAlive <= 0 && enemiesLeftToSpawn <= 0)
@@ -81,8 +83,18 @@ public class EnemySpawner : MonoBehaviour
     //Ends the current wave and prepares the next one
     private void EndWave()
     {
+        if (lastWaveCompleted) return;
+
         isSpawning = false;
         timeSinceLastSpawn = 0f;
+
+        if (currentWave >= 3)
+        {
+            Debug.Log("Finished Last Wave");
+            lastWaveCompleted = true;
+            return;
+        }
+
         currentWave++;
         StartCoroutine(StartWave()); //Start the next wave
     }
@@ -97,13 +109,27 @@ public class EnemySpawner : MonoBehaviour
         GameObject prefabToSpawn = currentWaveArray[enemyIndex]; // Select enemy
         
         // Spawn enemy
-        Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+        GameObject newEnemy = Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+        if (newEnemy != null) 
+        {
+            enemiesAlive++; // Only increment if enemy is successfully created
+        }
+
+        enemiesLeftToSpawn--;
     }
 
     private int EnemiesPerWave()
     {
         GameObject[] currentWaveArray = GetWaveArray();
-        return currentWaveArray != null ? currentWaveArray.Length : 0;
+        
+        if (currentWaveArray != null)
+        {
+            return currentWaveArray.Length;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     private GameObject[] GetWaveArray()
