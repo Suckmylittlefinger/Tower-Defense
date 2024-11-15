@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.ComponentModel.Design;
+using System;
 
 public class BasicTurret : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class BasicTurret : MonoBehaviour
     [SerializeField] private float targetingRange = 3f;
     [SerializeField] private float rotationSpeed = 200f;
     [SerializeField] float fireRate = 1f;
+    [SerializeField] float numBullets = 25;
     float fireCountdown = 0f;
 
     private Transform target;
@@ -38,10 +40,16 @@ public class BasicTurret : MonoBehaviour
             target = null;
         }
 
+        if (numBullets == 0)
+        {
+            Destroy(gameObject);
+        }
+
         //if ready to fire will call Shoot method and shoot at enemies 
         if (fireCountdown<= 0f) 
         {
             Shoot();
+            numBullets-=1;
             fireCountdown = 1f / fireRate;
         }
         //slowly decreases the fireCountdown each frame to get ready to fire again
@@ -95,7 +103,7 @@ public class BasicTurret : MonoBehaviour
 
         if (bullet != null)
         {
-            bullet.Seek(target); //sends target the turret is aiming at to the bullet script 
+            bullet.Seek(target); //sends target the turret is aiming at to the bullet script  
         }
     }
 }

@@ -86,6 +86,7 @@ MonoBehaviour:
   targetingRange: 2
   rotationSpeed: 200
   fireRate: 3
+  numBullets: 50
 --- !u!1 &5911400473719649301
 GameObject:
   m_ObjectHideFlags: 0
