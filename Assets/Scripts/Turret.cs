@@ -5,7 +5,7 @@ using UnityEditor;
 using System.ComponentModel.Design;
 using System;
 
-public class BasicTurret : MonoBehaviour
+public class Turret : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform turretRotationPoint;
