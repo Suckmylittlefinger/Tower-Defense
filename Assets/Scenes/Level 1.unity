@@ -5119,6 +5119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wave1:
+  - {fileID: 4784017263872342555, guid: da70881c624cc2b458e812f9a18c6b73, type: 3}
   - {fileID: 4784017263872342555, guid: e0805879d9d4dab4f9c8a9c68dd96c7e, type: 3}
   - {fileID: 4784017263872342555, guid: e0805879d9d4dab4f9c8a9c68dd96c7e, type: 3}
   - {fileID: 4784017263872342555, guid: e0805879d9d4dab4f9c8a9c68dd96c7e, type: 3}

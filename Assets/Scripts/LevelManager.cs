@@ -31,6 +31,18 @@ public class LevelManager : MonoBehaviour
         {
             GameOver();
         }
+
+        //Extra money Cheat Code
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            money += 250;
+        }
+
+        //Extra Lives Cheat Code
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            totalLives += 1;
+        }
     }
 
     //Add to total money
