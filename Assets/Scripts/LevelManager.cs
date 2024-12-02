@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        money = 100; //Starting money
+        money = 150; //Starting money
         totalLives = 3; //Starting lives
     }
 
