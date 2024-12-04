@@ -85,6 +85,10 @@ public class EnemySpawner : MonoBehaviour
     {
         if (lastWaveCompleted) return;
 
+        ValidateEnemiesAlive(); //Ensure enemiesAlive is accurate
+
+        if (enemiesAlive > 0) return; //Prevent wave ending before all enemies die
+
         isSpawning = false;
         timeSinceLastSpawn = 0f;
 
@@ -144,6 +148,12 @@ public class EnemySpawner : MonoBehaviour
             default: return null;
         }
     }
+
+    private void ValidateEnemiesAlive() //Finds all spawned enemies using their Health script
+    {
+        enemiesAlive = FindObjectsOfType<Health>().Length - 1;
+    }
+
 
 
 
