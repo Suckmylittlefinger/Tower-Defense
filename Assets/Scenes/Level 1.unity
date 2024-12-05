@@ -22093,38 +22093,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2847093812034902488, guid: 7797f0963180b954bbc87fbe8c64f579, type: 3}
-      propertyPath: sounds.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2847093812034902488, guid: 7797f0963180b954bbc87fbe8c64f579, type: 3}
-      propertyPath: sounds.Array.data[1].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 9589a9bb81fc3e341a2f80bc49e39524, type: 3}
-    - target: {fileID: 2847093812034902488, guid: 7797f0963180b954bbc87fbe8c64f579, type: 3}
-      propertyPath: sounds.Array.data[1].loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2847093812034902488, guid: 7797f0963180b954bbc87fbe8c64f579, type: 3}
-      propertyPath: sounds.Array.data[1].name
-      value: SmallGun
-      objectReference: {fileID: 0}
-    - target: {fileID: 2847093812034902488, guid: 7797f0963180b954bbc87fbe8c64f579, type: 3}
-      propertyPath: sounds.Array.data[1].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2847093812034902488, guid: 7797f0963180b954bbc87fbe8c64f579, type: 3}
-      propertyPath: sounds.Array.data[1].volume
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 2847093812034902488, guid: 7797f0963180b954bbc87fbe8c64f579, type: 3}
-      propertyPath: sounds.Array.data[1].pitchVariation
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2847093812034902488, guid: 7797f0963180b954bbc87fbe8c64f579, type: 3}
-      propertyPath: sounds.Array.data[1].randomizePitch
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3345716097892268293, guid: 7797f0963180b954bbc87fbe8c64f579, type: 3}
       propertyPath: m_Name
       value: Audio Manager
