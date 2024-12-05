@@ -95,11 +95,13 @@ public class Turret : MonoBehaviour
         //Draw a wireframe disc around the turret to represent its range
         Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
     }
+
     //shoots bullets at the targetted enemy 
     private void Shoot()
     {// to get reference to bullet object and access script
         GameObject bulletGO = (GameObject)Instantiate(bulletPreFab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
+        FindAnyObjectByType<AudioManager>().Play("SmallGun");
 
         if (bullet != null)
         {
