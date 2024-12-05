@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7727780959453793574}
   - component: {fileID: 4678039491541879804}
   - component: {fileID: 7048318396537875939}
+  - component: {fileID: 2472279053021521558}
   m_Layer: 7
   m_Name: TankEnemy
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: ed7ad41c57dd6f146a56370693962a7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -179,3 +180,16 @@ MonoBehaviour:
   hitPoints: 100
   moneyDropped: 500
   isTankEnemy: 1
+--- !u!114 &2472279053021521558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4784017263872342555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248b795208b40b342b24cc2ccfef0489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 11400000, guid: 10e432087472942409fbf1d24dfd2dd2, type: 2}
