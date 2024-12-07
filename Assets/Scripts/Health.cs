@@ -5,9 +5,11 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [Header("Attributes")]
+    [SerializeField] private int maxHitPoints = 10;
     [SerializeField] private int hitPoints = 10;
     [SerializeField] private int moneyDropped;
     [SerializeField] private bool isTankEnemy;
+    [SerializeField] HealthBar healthBar;
 
     public void TakeDamage(int damage, bool isBigBullet)
     {
@@ -19,6 +21,7 @@ public class Health : MonoBehaviour
         }
 
         hitPoints -= damage;
+        healthBar.UpdateHealthBar(hitPoints, maxHitPoints);
 
         if (hitPoints <= 0)
         {
