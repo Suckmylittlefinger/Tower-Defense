@@ -5169,8 +5169,8 @@ MonoBehaviour:
   - {fileID: 507839419}
   - {fileID: 1332249364}
   - {fileID: 1003082605}
-  money: 0
-  totalLives: 0
+  money: 150
+  totalLives: 3
 --- !u!114 &381500051
 MonoBehaviour:
   m_ObjectHideFlags: 0

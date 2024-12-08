@@ -11,19 +11,15 @@ public class LevelManager : MonoBehaviour
     public Transform startPoint;
     public Transform[] path;
 
-    public int money;
-    public int totalLives;
+    public int money = 150; //Starting money
+    public int totalLives = 3; //Starting lives
 
     private void Awake()
     {
         main = this; //Makes sure there is only one instance of LevelManager and makes it more easily accessible in other scripts
     }
 
-    private void Start()
-    {
-        money = 150; //Starting money
-        totalLives = 3; //Starting lives
-    }
+
 
     private void Update()
     {
